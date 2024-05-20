@@ -1,5 +1,6 @@
 body {
   background: linear-gradient(90deg, #004aad, #cb6ce6);
+  font-family: Tahoma;
 }
 
 #Container {
@@ -19,4 +20,6 @@ button {
   padding: 3px auto;
   background-color: #5e17eb;
   color: white;
+  padding: 3px 15px;
+  border-radius: 10px;
 }
