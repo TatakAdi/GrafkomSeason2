@@ -1,0 +1,22 @@
+body {
+  background: linear-gradient(90deg, #004aad, #cb6ce6);
+}
+
+#Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 250px;
+  margin: 17% auto 17%;
+  border: solid;
+  border-radius: 12px;
+  background-color: #d9d9d9;
+}
+
+button {
+  margin: 10px;
+  padding: 3px auto;
+  background-color: #5e17eb;
+  color: white;
+}
