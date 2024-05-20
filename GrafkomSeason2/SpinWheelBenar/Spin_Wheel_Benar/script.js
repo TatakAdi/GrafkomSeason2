@@ -10,8 +10,20 @@ const centerY = height / 2;
 const radius = width / 2;
 
 let zonkCounter = 0;
+let priceCounter = 0;
 
 let items = document.getElementsByTagName("textarea")[0].value.split("\n");
+
+const easterEgg = [
+  "https://www.youtube.com/watch?v=tZveh3ZLkoI&ab_channel=InstitutTeknologiKalimantan",
+  "https://youtu.be/PHgc8Q6qTjc",
+  "https://youtu.be/u1f0MWuX55g",
+  "https://www.youtube.com/@ChandraEdogawa",
+  "https://www.youtube.com/watch?v=UkcJhNwg5lw",
+  "https://www.dicoding.com/",
+  "https://www.youtube.com/shorts/Qwu5eUWmtKo?feature=share",
+  "https://youtu.be/SAzofLc3DMk",
+];
 
 let updatedItems = [];
 for (let i = 0; i < items.length; i++) {
@@ -135,23 +147,30 @@ function animate() {
           "_blank"
         );
       }
-    } else if (winner === "Nilai E") {
-      // window.open("https://www.youtube.com/@ChandraEdogawa", "_blank");
-      window.open("https://youtu.be/u1f0MWuX55g");
-    } else if (winner === "Gitar") {
-      window.open(
-        "https://www.youtube.com/watch?v=tZveh3ZLkoI&ab_channel=InstitutTeknologiKalimantan",
-        "_blank"
-      );
-    } else if (winner === "Nilai A") {
-      window.open("https://youtu.be/PHgc8Q6qTjc");
+      // } else if (winner === "Nilai E") {
+      //   // window.open("https://www.youtube.com/@ChandraEdogawa", "_blank");
+      //   window.open("https://youtu.be/u1f0MWuX55g");
+      // } else if (winner === "Gitar") {
+      //   window.open(
+      //     "https://www.youtube.com/watch?v=tZveh3ZLkoI&ab_channel=InstitutTeknologiKalimantan",
+      //     "_blank"
+      //   );
+      // } else if (winner === "Nilai A") {
+      //   window.open("https://youtu.be/PHgc8Q6qTjc");
     } else {
-      Swal.fire({
-        title: "🎉🎉🎉🎉🎉",
-        text: `Kamu dapat ${winner} !`,
-        icon: "success",
-        confirmButtonText: "Claim & Try Again",
-      });
+      priceCounter++;
+      if (priceCounter % 3 === 0) {
+        window.open(
+          easterEgg[Math.floor(Math.random() * (easterEgg.length - 1))]
+        );
+      } else {
+        Swal.fire({
+          title: "🎉🎉🎉🎉🎉",
+          text: `Kamu dapat ${winner} !`,
+          icon: "success",
+          confirmButtonText: "Claim & Try Again",
+        });
+      }
     }
     return;
   }
